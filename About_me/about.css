@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    height: 100vh;
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    height: 610px;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid gray;
+    margin: 20px;
+    cursor: text;
+    position: relative;
+    z-index: 1;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    width: 100%;
+    height: 24px;
+    background-color: #424040;
+    padding: 0 8px;
+}
+
+/* Add flexbox for the button container */
+.buttons-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu .button {
+    display: flex;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.bg-red {
+    background-color: #ff5f57;
+}
+
+.bg-yellow {
+    background-color: #ffbd2e;
+}
+
+.bg-green {
+    background-color: #28c840;
+}
+
+div.title {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu h1 {
+    font-size: 13px;
+    color: #9c9c9c;
+    margin: 0;
+}
+
+.title-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: limegreen;
+}
+
+.icon {
+    width: 20px; 
+    height: 20px;
+    margin-right: 10px; 
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    overflow: auto;
+}
+
+#output {
+    flex-grow: 1;
+    color: chartreuse;
+    white-space: pre-wrap;
+    font-family: 'Fira Code', monospace;
+    padding-bottom: 10px;
+}
+
+.input-line {
+    display: flex;
+    padding-top: 10px;
+}
+
+.white-text {
+    color: white;
+}
+
+.input-char {
+    color:  #057303;
+    padding-right: 10px;
+}
+
+input {
+    border: none;
+    background-color: unset;
+    color: chartreuse;
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Fira Code', monospace;
+}
+
+input:focus {
+    outline: none;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #555;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(209, 209, 209, 0.5);
+    border-radius: 10px;
+}
+
+footer {
+    width: 100%;
+    text-align: right;
+    z-index: 1;
+    position: absolute; 
+    bottom: 10px; 
+    padding-right: 10px;
+}
+
+footer .social-media {
+    list-style: none;
+    display: inline-flex;
+    gap: 25px;
+}
+
+footer .social-media li {
+    display: inline-block;
+}
+
+footer .social-media li a img {
+    width: 30px;
+    height: auto;
+    transition: 0.3s;
+}
+
+footer .social-media li a:hover img {
+    animation: logo_glitch 0.5s infinite;
+}
+
+svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	cursor: pointer;
+	filter: sepia(20%);
+}
+
+
+@keyframes logo_glitch {
+    0% {
+        transform: translate(0);
+        filter: brightness(100%);
+    }
+    20% {
+        transform: translate(2px, -2px);
+        filter: brightness(150%);
+    }
+    40% {
+        transform: translate(-2px, 2px);
+        filter: brightness(200%);
+    }
+    60% {
+        transform: translate(2px, -2px);
+        filter: brightness(150%);
+    }
+    80% {
+        transform: translate(0);
+        filter: brightness(100%);
+    }
+    100% {
+        transform: translate(-2px, 2px);
+        filter: brightness(200%);
+    }
+}
